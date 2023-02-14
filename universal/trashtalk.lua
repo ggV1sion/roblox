@@ -1,5 +1,3 @@
-local Players = game:GetService("Players")
-
 _G.TrashTalk_Settings = {
     Keybind = "m",
     Texts = {"focus", "you're terrible", "cold"}
