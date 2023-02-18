@@ -13,6 +13,9 @@ end
 repeat
     wait()
 until game:GetService("Players").LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
+
+wait(2.5) 
+
 local Services = {
     Players = game:GetService("Players"),
     RunService = game:GetService("RunService"),
