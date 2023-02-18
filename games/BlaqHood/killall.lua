@@ -28,7 +28,7 @@ local Local = {
 }
 
 for i, v in pairs(Local.Character:GetChildren()) do
-    if v.ClassName == "Script" then
+    if v.ClassName == "Script" and v.Name ~= "Health" and v.Name ~= "Animate" then
         v.LocalScript:Destroy()
     end
 end
