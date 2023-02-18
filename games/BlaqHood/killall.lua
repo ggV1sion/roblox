@@ -51,10 +51,11 @@ game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(func
             local x =
         "loadstring(game:HttpGet('https://raw.githubusercontent.com/luatruth/roblox/main/games/BlaqHood/killall.lua'))()"
     syn.queue_on_teleport(x)
-    game:GetService("TeleportService"):Teleport(game.PlaceId, Local.Player)
+    Services.TeleportService:Teleport(game.PlaceId, Local.Player)
     end
 end)
 
+Local.Character.HumanoidRootPart.CFrame = CFrame.new(999999, 999999, 999999)
 local HumClone = Local.Player.Character.Humanoid:Clone()
 HumClone.Parent = Local.Player.Character
 HumClone:ChangeState(15)
