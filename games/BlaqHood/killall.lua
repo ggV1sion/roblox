@@ -45,6 +45,16 @@ n = hookmetamethod(game, "__namecall", function(...)
     return n(table.unpack(a))
 end)
 
+game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(child)
+    if child.Name == 'ErrorPrompt' and child:FindFirstChild('MessageArea') and
+        child.MessageArea:FindFirstChild("ErrorFrame") then
+            local x =
+        "loadstring(game:HttpGet('https://raw.githubusercontent.com/luatruth/roblox/main/games/BlaqHood/killall.lua'))()"
+    syn.queue_on_teleport(x)
+    game:GetService("TeleportService"):Teleport(game.PlaceId, Local.Player)
+    end
+end)
+
 local HumClone = Local.Player.Character.Humanoid:Clone()
 HumClone.Parent = Local.Player.Character
 HumClone:ChangeState(15)
@@ -59,10 +69,6 @@ coroutine.resume(coroutine.create(function()
             firetouchinterest(tool.Handle, v.Character['Head'], 0)
         end
     end
-    local x =
-        "loadstring(game:HttpGet('https://raw.githubusercontent.com/luatruth/roblox/main/games/BlaqHood/killall.lua'))()"
-    syn.queue_on_teleport(x)
-    game:GetService("TeleportService"):Teleport(game.PlaceId, Local.Player)
 end))
 
 wait(.3)
