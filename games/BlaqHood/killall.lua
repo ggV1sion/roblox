@@ -1,6 +1,9 @@
 if not game:IsLoaded() then
     game.Loaded:Wait()
 end
+if not game:GetService("Players").LocalPlayer:FindFirstChild("Character") then
+    game:GetService("Players").LocalPlayer.Character:Wait()
+end
 repeat
     wait()
 until game:GetService("Players").LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
@@ -24,7 +27,6 @@ for i, v in pairs(Local.Character:GetChildren()) do
         v.LocalSript:Destroy()
     end
 end
-
 local r = {"BreathingHAMON", "TeleportDetect", "JJARC", "TakePoisonDamage", "CHECKER_1", "CHECKER", "GUI_CHECK",
            "OneMoreTime", "checkingSPEED", "BANREMOTE", "PERMAIDBAN", "KICKREMOTE", "BR_KICKPC", "FORCEFIELD",
            "Christmas_Sock", "VirusCough", "Symbiote", "Symbioted"}
