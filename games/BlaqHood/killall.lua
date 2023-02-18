@@ -1,8 +1,14 @@
-if not game:IsLoaded() then
-    game.Loaded:Wait()
+game["Loaded"]:Wait()
+local Players = game:GetService("Players")
+local LP = Players["LocalPlayer"]
+while not LP do
+    Players["ChildAdded"]:Wait()
+    LP = Players["LocalPlayer"]
 end
-if not game:GetService("Players").LocalPlayer:FindFirstChild("Character") then
-    game:GetService("Players").LocalPlayer.Character:Wait()
+local Char = LP["Character"]
+while not Char do
+    LP["CharacterAdded"]:Wait()
+    Char = LP["Character"]
 end
 repeat
     wait()
