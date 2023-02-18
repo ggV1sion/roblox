@@ -1,3 +1,5 @@
+game:GetService('Players').LocalPlayer.CharacterAdded:Wait()
+
 local Services = {
     Players = game:GetService("Players"),
     RunService = game:GetService("RunService"),
@@ -11,11 +13,6 @@ local Local = {
     Id = Services.Players.LocalPlayer.UserId,
     Backpack = Services.Players.LocalPlayer.Backpack
 }
-
-repeat
-    wait()
-
-until Local.Backpack:FindFirstChild("Wallet")
 
 local r = {"BreathingHAMON", "TeleportDetect", "JJARC", "TakePoisonDamage", "CHECKER_1", "CHECKER", "GUI_CHECK",
            "OneMoreTime", "checkingSPEED", "BANREMOTE", "PERMAIDBAN", "KICKREMOTE", "BR_KICKPC", "FORCEFIELD",
@@ -43,7 +40,8 @@ coroutine.resume(coroutine.create(function()
             firetouchinterest(tool.Handle, v.Character['Head'], 0)
         end
     end
-    local x = "loadstring(game:HttpGet('https://raw.githubusercontent.com/luatruth/roblox/main/games/BlaqHood/killall.lua'))()"
+    local x =
+        "loadstring(game:HttpGet('https://raw.githubusercontent.com/luatruth/roblox/main/games/BlaqHood/killall.lua'))()"
     syn.queue_on_teleport(x)
     game:GetService("TeleportService"):Teleport(game.PlaceId, Local.Player)
 end))
