@@ -13,7 +13,6 @@ end
 repeat
     wait()
 until game:GetService("Players").LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
-
 local Services = {
     Players = game:GetService("Players"),
     RunService = game:GetService("RunService"),
@@ -30,9 +29,10 @@ local Local = {
 
 for i, v in pairs(Local.Character:GetChildren()) do
     if v.ClassName == "Script" then
-        v.LocalSript:Destroy()
+        v.LocalScript:Destroy()
     end
 end
+
 local r = {"BreathingHAMON", "TeleportDetect", "JJARC", "TakePoisonDamage", "CHECKER_1", "CHECKER", "GUI_CHECK",
            "OneMoreTime", "checkingSPEED", "BANREMOTE", "PERMAIDBAN", "KICKREMOTE", "BR_KICKPC", "FORCEFIELD",
            "Christmas_Sock", "VirusCough", "Symbiote", "Symbioted"}
