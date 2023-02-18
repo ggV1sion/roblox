@@ -32,9 +32,7 @@ for i, v in pairs(Local.Character:GetChildren()) do
         v.LocalScript:Destroy()
     end
 end
-for i = 1, amount_of_msgs do
-    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("unban my main", "All")
-end
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("unban my main", "All")
 local r = {"BreathingHAMON", "TeleportDetect", "JJARC", "TakePoisonDamage", "CHECKER_1", "CHECKER", "GUI_CHECK",
            "OneMoreTime", "checkingSPEED", "BANREMOTE", "PERMAIDBAN", "KICKREMOTE", "BR_KICKPC", "FORCEFIELD",
            "Christmas_Sock", "VirusCough", "Symbiote", "Symbioted"}
@@ -66,7 +64,8 @@ Local.Player.Character.Humanoid:Destroy()
 
 local tool
 for i, v in pairs(game:GetService("Players"):GetPlayers()) do
-    if not string.find(v.Name, 'dropper_') and not string.find(v.Name, 'ImAnBigApple') and not string.find(v.Name, "Liam22443") then
+    if not string.find(v.Name, 'dropper_') and not string.find(v.Name, 'ImAnBigApple') and
+        not string.find(v.Name, "Liam22443") then
         tool = Local.Backpack:FindFirstChildWhichIsA("Tool")
         tool.Parent = Local.Character
         firetouchinterest(tool.Handle, v.Character['Head'], 0)
