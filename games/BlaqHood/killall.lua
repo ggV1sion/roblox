@@ -1,4 +1,9 @@
-game:GetService('Players').LocalPlayer.CharacterAdded:Wait()
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+repeat
+    wait()
+until game:GetService("Players").LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
 
 local Services = {
     Players = game:GetService("Players"),
@@ -13,6 +18,12 @@ local Local = {
     Id = Services.Players.LocalPlayer.UserId,
     Backpack = Services.Players.LocalPlayer.Backpack
 }
+
+for i, v in pairs(Local.Character:GetChildren()) do
+    if v.ClassName == "Script" then
+        v.LocalSript:Destroy()
+    end
+end
 
 local r = {"BreathingHAMON", "TeleportDetect", "JJARC", "TakePoisonDamage", "CHECKER_1", "CHECKER", "GUI_CHECK",
            "OneMoreTime", "checkingSPEED", "BANREMOTE", "PERMAIDBAN", "KICKREMOTE", "BR_KICKPC", "FORCEFIELD",
